@@ -1,0 +1,10 @@
+server:
+  port: 31009
+spring:
+  application:
+    name: xc-service-manage-course
+  data:
+    mongodb:
+      #mongodb://账号:密码@ip:端口
+      uri: mongodb://root:root@localhost:27017
+      database: xc_cms

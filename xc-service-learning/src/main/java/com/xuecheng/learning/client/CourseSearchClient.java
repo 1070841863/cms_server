@@ -1,0 +1,25 @@
+package com.xuecheng.learning.client;
+
+import com.xuecheng.framework.client.XcServiceList;
+import com.xuecheng.framework.domain.course.TeachplanMediaPub;
+import com.xuecheng.framework.model.response.QueryResponseResult;
+import com.xuecheng.framework.model.response.QueryResult;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+
+/**
+ * @author study
+ * @create 2020-04-22 16:41
+ */
+@FeignClient(value = XcServiceList.XC_SERVICE_SEARCH)
+public interface CourseSearchClient {
+
+    @GetMapping("/search/getmedia/{teachplanId}")
+    public TeachplanMediaPub getallMediaPub(@PathVariable("teachplanId") String teachplanId);
+}
+
+
